@@ -6,37 +6,39 @@ package lovivido;
 
 import javax.swing.JOptionPane;
 
-public class LoVivido {
+public class LoVivido
+{
 
-public static void main(String[] args) {
-String n;
-String e;
+    public static void main(String[] args)
+    {
+       String nombre;
+        String edad;
+        /**
+         * creamos objeto de tipo Calculos
+         */
+        Calculos persona1=new Calculos();
+        /**
+         * pedimos el nombre y la edad de la persona 
+         */
+        nombre = JOptionPane.showInputDialog("Escriba su nombre: ");
+        edad = JOptionPane.showInputDialog("Escriba su edad: ");
+        /**
+         * llamamos a los metodos para calcular el tiempo vivido por las personas
+         */
+        persona1.pedirDatos(nombre,edad);
+        persona1.calcularvalores();
+        /**
+         * mostramos el resultado
+         */
 
-int m;
-int d;
-int h;
-int a;
+        JOptionPane.showMessageDialog(null,"Meses: "+persona1.meses,"Numero de meses vividos de "+persona1.getNombre(),JOptionPane.INFORMATION_MESSAGE);
 
-n = JOptionPane.showInputDialog ("Escriba su nombre: ");
-e = JOptionPane.showInputDialog ("Escriba su edad: ");
- 
-a = Integer.parseInt (e);
- 
-m = (a*12);
-d = (a*365);
-h = (d*24);
- 
- JOptionPane.showMessageDialog(null,  "Meses: "  +m,"Numero de meses vividos de " +n,JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null,"Días: "+persona1.getDias(),"Numero de días vividos de "+persona1.getNombre(),JOptionPane.INFORMATION_MESSAGE);
 
+        JOptionPane.showMessageDialog(null,"Horas: "+persona1.getHoras(),"Numero de horas vividos de "+persona1.getNombre(),JOptionPane.INFORMATION_MESSAGE);
 
- JOptionPane.showMessageDialog(null, "Días: " +d,"Numero de días vividos de "+n,JOptionPane.INFORMATION_MESSAGE);
+        System.exit(0);
 
-
- JOptionPane.showMessageDialog(null, "Horas: " +h,"Numero de horas vividos de "+n,JOptionPane.INFORMATION_MESSAGE);
-
-   System.exit (0);
-
-}
-   
+    }
 
 }
